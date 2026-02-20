@@ -20,7 +20,9 @@ git branch: 'main', url: 'https://github.com/adithi2000/scientific-calculator-mi
 
 stage('Debug workspace') {
 steps {
+sh 'pwd'
 sh 'ls -l'
+sh 'ls -R'
 }
 }
 
