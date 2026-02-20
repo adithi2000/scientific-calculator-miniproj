@@ -19,6 +19,7 @@ git branch: 'main' url: 'https://github.com/adithi2000/scientific-calculator-min
 }
 }
 }
+}
 stage('Debug workspace')
 {
 steps{
