@@ -1,0 +1,20 @@
+- hosts: localhost
+
+  connection: local
+
+  tasks:
+
+  - name: Pull Docker Image
+    command: docker pull adithip/scientific-calculator
+
+  - name: Stop Old Container
+    ignore_errors: yes
+    command: docker stop calculator
+
+  - name: Remove Old Container
+    ignore_errors: yes
+    command: docker rm calculator
+
+  - name: Run New Container
+    command: docker run -d --name calculator adithip/scientific-calculator
+
