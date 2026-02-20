@@ -49,32 +49,15 @@ sh 'ls -l'
 
 
 stage('Maven build') {
-
-steps {
-
-sh '''
-
-docker run --rm \
-
--v ${WORKSPACE}:/app \
-
--w /app \
-
-maven:3.9.6-eclipse-temurin-17 \
-
-mvn clean package
-
-'''
-
+ steps {
+ sh "docker run --rm -v ${WORKSPACE}:/app -w /app maven:3.9.6-eclipse-temurin-17 mvn clean package"
 }
-
 }
-
-
+ 
 stage('Build Docker image') {
-
+}
 steps {
-
+}
 script {
 
 docker.build("${DOCKER_IMAGE_NAME}", ".")
