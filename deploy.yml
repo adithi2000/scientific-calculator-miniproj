@@ -16,5 +16,5 @@
     command: docker rm calculator
 
   - name: Run New Container
-    command: docker run -d --name calculator adithip/scientific-calculator
+    command: docker run -it --name calculator adithip/scientific-calculator
 
