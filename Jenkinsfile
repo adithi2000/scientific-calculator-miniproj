@@ -65,23 +65,19 @@ sh 'docker logs calculator || true'
 }
 
 }
-
- post {
- success {
- emailext(
- to: 'adithip2000@gmail.com',
- subject: "Build SUCCESS: ${env.JOB_NAME}", 
-body: "The build was  successful.\nCheck Jenkins for details."
-            )
-        }
-  failure {
- emailext(
- to: 'adithip2000@gmail.com',
- subject: "Build FAILED: ${env.JOB_NAME}",
- body: "The build failed.\nPlease check Jenkins console output."
-            )
-        }
+post {
+    success {
+        mail to: 'adithip2000@gmail.com',
+             subject: "Build SUCCESS: ${env.JOB_NAME}",
+             body: "The build was successful."
     }
+
+    failure {
+        mail to: 'adithip2000@gmail.com',
+             subject: "Build FAILED: ${env.JOB_NAME}",
+             body: "The build failed. Please check Jenkins."
+    }
+}
 }
 
 
