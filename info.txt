@@ -1,0 +1,10 @@
+Next time on showing operation output use docker run --rm adithip/scientific-calculator fact 6
+
+difference between entrypoint and cmd is that
+Entrypoint cannot be overriden so if i give above command it does java -jar app.jar fact 6
+Cmd does run command like 
+java -jar app.jar and then 
+fact 6
+this doenst work ryt, the arguents are for a main file
+
+
