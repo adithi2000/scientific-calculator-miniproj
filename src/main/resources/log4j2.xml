@@ -1,25 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <Configuration status="WARN">
+
 
   <Appenders>
 
-    <File name="FileLogger" fileName="logs/app.log">
 
-      <PatternLayout pattern="%d %p %c{1.} [%t] %m%n"/>
+    <!-- Console Appender -->
+
+    <Console name="ConsoleLogger" target="SYSTEM_OUT">
+
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n"/>
+
+    </Console>
+
+
+    <!-- File Appender -->
+
+    <File name="FileLogger" fileName="/app/logs/app.log">
+
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n"/>
 
     </File>
 
+
   </Appenders>
+
 
   <Loggers>
 
+
     <Root level="info">
+
+      <AppenderRef ref="ConsoleLogger"/>
 
       <AppenderRef ref="FileLogger"/>
 
     </Root>
 
+
   </Loggers>
+
 
 </Configuration>
